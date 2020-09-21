@@ -1,0 +1,48 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WizardControl"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic" x:Class="WizardControl.MainWindow"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="350" Width="500"
+        >
+    <Window.Resources>
+        <Style TargetType="syncfusion:WizardNavigationArea" >
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="syncfusion:WizardNavigationArea">
+                        <Grid Height="50">
+                            <Border BorderThickness="1" BorderBrush="Black">
+                                <Grid>
+                                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <Button Name="Part_NextButton" Width="100" Height="30" Margin="0 0 20 0" Click="Button_Click" Background="CadetBlue" Foreground="White" Content="Next" HorizontalAlignment="Right"/>
+                                    <Button Name="Part_FinishButton" Visibility="Collapsed" Width="100" Height="30" Margin="0 0 20 0" Click="Part_FinishButton_Click" Background="CadetBlue" Foreground="White" Content="Finish" HorizontalAlignment="Right"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <syncfusion:WizardControl x:Name="wizardControl"  >
+            <syncfusion:WizardPage x:Name="wizardPage1">
+                <TextBlock Text="New page 1" />
+            </syncfusion:WizardPage>
+            <syncfusion:WizardPage x:Name="wizardPage2">
+                <TextBlock Text="New page 2" />
+            </syncfusion:WizardPage>
+            <syncfusion:WizardPage x:Name="wizardPage3">
+                <TextBlock Text="New page 3" />
+            </syncfusion:WizardPage>
+            <syncfusion:WizardPage x:Name="wizardPage4">
+                <TextBlock Text="Final page" />
+            </syncfusion:WizardPage>
+        </syncfusion:WizardControl>
+    </Grid>
+</Window>
